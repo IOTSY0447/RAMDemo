@@ -115,8 +115,8 @@ export default class loadScene extends cc.Component {
      */
     releaseAllSpriteFrame() {
         for (let url in this.spriteFramePool) {
-            let prefab = this.spriteFramePool[url]
-            var deps = cc.loader.getDependsRecursively(prefab);
+            let spriteFrame = this.spriteFramePool[url]
+            var deps = cc.loader.getDependsRecursively(spriteFrame);
             cc.loader.release(deps);
         }
         this.spriteFramePool = {}
